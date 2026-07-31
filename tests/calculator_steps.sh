@@ -4,8 +4,8 @@
 source ../src/calculator.sh
 
 
-pass = 0
-fail = 0
+pass=0
+fail=0
 
 echo "Running Tests..."
 
@@ -13,8 +13,8 @@ echo "------------"
 
 #Test Addition
 
-result= $(add 5 4)
-if ["$result" == "9"]; then
+result=$(add 5 4)
+if [ "$result" == "9" ]; then
 echo "Addition passed"
 ((pass++))
 else
@@ -26,11 +26,11 @@ fi
 
 result=$(subtract 10 3)
 
-if ["$result" == "7" ]; then
+if [ "$result" == "7" ]; then
     echo "Subtract Passed"
     ((pass++))
 else
-    echo"Subtraction Failed"
+    echo "Subtraction Failed"
     ((fail++))
 fi
 
@@ -38,7 +38,7 @@ fi
 
 result=$(multiply 4 6)
 
-if["$result" == "24" ]; then
+if [ "$result" == "24" ]; then
    echo "Multiplication Passed"
    ((pass++))
 else
@@ -50,18 +50,18 @@ fi
 
 result=$(divide 20 5)
 
-if ["$result" == "4" ]; then
+if [ "$result" == "4" ]; then
     echo "Division Passed"
     ((pass++))
 else
-    echo"Division Failed"
+    echo "Division Failed"
     ((fail++))
 fi
 
 #Test Divide by Zero
 
 result=$(divide 20 0)
-if ["$result" == "Cannot divide by zero" ]; then
+if [ "$result" == "Cannot divide by zero" ]; then
    echo "Divide by Zero Passed"
    ((pass++))
 else
@@ -75,7 +75,7 @@ echo "Passed: $pass"
 
 echo "Failed: $fail"
 
-if ["$fail" -eq 0 ]; then
+if [ "$fail" -eq 0 ]; then
     echo "All tests passed."
 else
     echo "Some tests failed."

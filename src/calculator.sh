@@ -14,7 +14,7 @@ multiply(){
 }
 
 divide(){
-    if ["$2" -eq 0]; then
+    if [ "$2" -eq 0 ]; then
         echo "Cannot divide by zero"
     else
         echo $(($1 / $2))
